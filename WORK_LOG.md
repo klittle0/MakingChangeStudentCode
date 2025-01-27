@@ -1,9 +1,9 @@
 Name: YOUR NAME HERE
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date   |    Time     |                                                                                                                                                                                                                                                                                                                                                                Update |
+|:-------|:-----------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Jan 26 | 4:15-5:00pm | I wrote pseudocode and started writing my solution. I plan to mimic the way I would solve this problem mentally by keeping track of the max #s of each coin that can fit into the target value, then using those values with for loops to find all solutions. I realized using solely for loops would be too time-intensive, so I'm incorporating a recursive method. |
+|        |             |                                                                                                                                                                                                                                                                                                                                                                       |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
