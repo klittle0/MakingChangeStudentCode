@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -17,32 +16,44 @@ public class MakingChange {
     public static long countWays(int target, int[] coins) {
         // Sort coins arrays
         Arrays.sort(coins);
+        // Each index represents a target value.
+        // Each value represents the # of ways to create the index
+        int[] numWays = new int[target + 1];
+        // Count represents the # of ways to achieve the target
         long count = 0;
         for (int i = 0; i < coins.length; i++){
-            count += coinRecurse(target, coins[i], i, coins);
+            numWays[target] = coinRecurse(target, i, coins, numWays);
         }
-        return count;
+
+        for (int i = 0; i < numWays.length; i++){
+            System.out.println(i + " " + numWays[0]);
+        }
+        return numWays[target];
     }
 
-    // Or maybe I should do a recursive method...I could basically just go through each type of coin, see how
-
-    public static int coinRecurse(int target, int total, int currentIndex, int[] coins, int[] coinCount){
-        // Base case — if target is reached
-        if (total == target){
-
-            return 1;
-        }
+    public static int coinRecurse(int target, int currentIndex, int[] coins, int[] numWays){
         // Base case — if value is greater than target, it's not a valid solution
-        if (total > target){
-            // Correct return statement?
+        if (target < 0){
             return 0;
         }
-        // Recurse
+        // Base case — if value is in coinCount, skip redundant recursion
+        if (numWays[target] != 0){
+            return numWays[target];
+        }
+        // Base case — if target is reached
+        if (target == 0){
+            return 1;
+        }
+
+        // Dynamic programming — save # of ways to achieve this total — except I'm not actively saving
+        //numWays[total] = total;
+
+        // Recurse for all coins of greater values
         int count = 0;
         for (int i = currentIndex; i < coins.length; i++){
-            count += coinRecurse(target, total + coins[i], i, coins);
+            // Saves num ways to get to this new value
+            numWays[target - coins[i]] = coinRecurse(target - coins[i], i, coins, numWays);
         }
         return count;
     }
-
 }
