@@ -18,42 +18,36 @@ public class MakingChange {
         Arrays.sort(coins);
         // Each index represents a target value.
         // Each value represents the # of ways to create the index
-        int[] numWays = new int[target + 1];
+        long[] numWays = new long[target + 1];
         // Count represents the # of ways to achieve the target
-        long count = 0;
-        for (int i = 0; i < coins.length; i++){
-            numWays[target] = coinRecurse(target, i, coins, numWays);
-        }
+
+        numWays[target] = coinRecurse(target, coins[0], 0, coins, numWays);
 
         for (int i = 0; i < numWays.length; i++){
-            System.out.println(i + " " + numWays[0]);
+            System.out.println(i + " " + numWays[i]);
         }
         return numWays[target];
     }
 
-    public static int coinRecurse(int target, int currentIndex, int[] coins, int[] numWays){
+    public static long coinRecurse(int target, int total, int currentIndex, int[] coins, long[] numWays){
         // Base case — if value is greater than target, it's not a valid solution
-        if (target < 0){
-            return 0;
-        }
-        // Base case — if value is in coinCount, skip redundant recursion
-        if (numWays[target] != 0){
-            return numWays[target];
+        if (total > target){
+            return -1;
         }
         // Base case — if target is reached
-        if (target == 0){
+        if (total == target){
             return 1;
         }
-
-        // Dynamic programming — save # of ways to achieve this total — except I'm not actively saving
-        //numWays[total] = total;
+        // Base case — if value is in coinCount, skip redundant recursion
+        if (numWays[total] >= 0){
+            return numWays[total];
+        }
 
         // Recurse for all coins of greater values
-        int count = 0;
         for (int i = currentIndex; i < coins.length; i++){
             // Saves num ways to get to this new value
-            numWays[target - coins[i]] = coinRecurse(target - coins[i], i, coins, numWays);
+            numWays[total] += coinRecurse(target, total + coins[i], i, coins, numWays);
         }
-        return count;
+        return numWays[total];
     }
 }
