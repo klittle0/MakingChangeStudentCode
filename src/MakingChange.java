@@ -16,38 +16,35 @@ public class MakingChange {
     public static long countWays(int target, int[] coins) {
         // Sort coins arrays
         Arrays.sort(coins);
-        // Each index represents a target value.
-        // Each value represents the # of ways to create the index
-        long[] numWays = new long[target + 1];
-        // Count represents the # of ways to achieve the target
+        // 2d array to save recursive calls & reduce redundancy
+        // Memoization approach!
+        int[][] numWays = new int[target][coins.length];
 
-        numWays[target] = coinRecurse(target, coins[0], 0, coins, numWays);
-
-        for (int i = 0; i < numWays.length; i++){
-            System.out.println(i + " " + numWays[i]);
-        }
-        return numWays[target];
+        return coinCount(target, 0, coins, numWays);
     }
 
-    public static long coinRecurse(int target, int total, int currentIndex, int[] coins, long[] numWays){
-        // Base case — if value is greater than target, it's not a valid solution
-        if (total > target){
-            return -1;
+    public static long coinCount(int target, int currentIndex, int[] coins, int[][] numWays){
+        // Memoization Base case — if this call is saved in numWays, return that value without recursing
+        if (numWays[target][currentIndex] != 0){
+            return numWays[target][currentIndex];
         }
-        // Base case — if target is reached
-        if (total == target){
+        // Base case — If sum is negative, it's not a valid solution
+        if (target < 0){
+            return 0;
+        }
+        // Base case — if smallest possible sum is reached
+        if (target == 0){
+            numWays[target][currentIndex] = 1;
             return 1;
         }
-        // Base case — if value is in coinCount, skip redundant recursion
-        if (numWays[total] >= 0){
-            return numWays[total];
+        // Base case — if index is out of bounds
+        if (currentIndex >= coins.length){
+            return 0;
         }
 
-        // Recurse for all coins of greater values
-        for (int i = currentIndex; i < coins.length; i++){
-            // Saves num ways to get to this new value
-            numWays[total] += coinRecurse(target, total + coins[i], i, coins, numWays);
-        }
-        return numWays[total];
+        // Recurse
+        return coinCount(target - coins[currentIndex], currentIndex, coins, numWays) +
+                coinCount(target, currentIndex + 1, coins, numWays);
+
     }
 }
