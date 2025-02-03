@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf08351e-8001-407c-880c-49b47a0a4156" name="Changes" comment="1/29 — debugging">
+    <list default="true" id="bf08351e-8001-407c-880c-49b47a0a4156" name="Changes" comment="2/3 — drafting memoization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MakingChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MakingChange.java" afterDir="false" />
     </list>
@@ -46,38 +46,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.MakingChangeTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MakingChangeTest.testCorrectLarge.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MakingChangeTest.testCorrectSmall.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.MakingChangeTest.executor": "Run",
+    "JUnit.MakingChangeTest.testCorrectLarge.executor": "Run",
+    "JUnit.MakingChangeTest.testCorrectLargest.executor": "Run",
+    "JUnit.MakingChangeTest.testCorrectSmall.executor": "Run",
+    "JUnit.MakingChangeTest.testEfficient.executor": "Run",
+    "JUnit.MakingChangeTest.testEfficientLarge.executor": "Run",
+    "JUnit.MakingChangeTest.testEfficientLargest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.MakingChangeTest.testCorrectSmall">
-    <configuration name="MakingChangeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="JUnit.MakingChangeTest.testEfficientLargest">
+    <configuration name="MakingChangeTest.testCorrectLargest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Making Change Student Code" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MakingChangeTest.testCorrectLarge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Making Change Student Code" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
-      <option name="METHOD_NAME" value="testCorrectLarge" />
+      <option name="METHOD_NAME" value="testCorrectLargest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,11 +88,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MakingChangeTest.testEfficient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Making Change Student Code" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
+      <option name="METHOD_NAME" value="testEfficient" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MakingChangeTest.testEfficientLarge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Making Change Student Code" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
+      <option name="METHOD_NAME" value="testEfficientLarge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MakingChangeTest.testEfficientLargest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Making Change Student Code" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
+      <option name="METHOD_NAME" value="testEfficientLargest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MakingChangeTest.testEfficientLargest" />
+        <item itemvalue="JUnit.MakingChangeTest.testEfficientLarge" />
+        <item itemvalue="JUnit.MakingChangeTest.testEfficient" />
+        <item itemvalue="JUnit.MakingChangeTest.testCorrectLargest" />
         <item itemvalue="JUnit.MakingChangeTest.testCorrectSmall" />
-        <item itemvalue="JUnit.MakingChangeTest.testCorrectLarge" />
-        <item itemvalue="JUnit.MakingChangeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738173834421</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2/3 — drafting memoization">
+      <option name="closed" value="true" />
+      <created>1738593323275</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738593323275</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -150,6 +185,7 @@
     <MESSAGE value="1/27 — working exponential draft" />
     <MESSAGE value="1/27 — memoization draft" />
     <MESSAGE value="1/29 — debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="1/29 — debugging" />
+    <MESSAGE value="2/3 — drafting memoization" />
+    <option name="LAST_COMMIT_MESSAGE" value="2/3 — drafting memoization" />
   </component>
 </project>

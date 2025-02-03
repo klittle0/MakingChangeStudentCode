@@ -18,15 +18,15 @@ public class MakingChange {
         Arrays.sort(coins);
         // 2d array to save recursive calls & reduce redundancy
         // Memoization approach!
-        int[][] numWays = new int[target][coins.length];
+        long[][] numWays = new long[target + 1][coins.length];
 
         return coinCount(target, 0, coins, numWays);
     }
 
-    public static long coinCount(int target, int currentIndex, int[] coins, int[][] numWays){
-        // Memoization Base case — if this call is saved in numWays, return that value without recursing
-        if (numWays[target][currentIndex] != 0){
-            return numWays[target][currentIndex];
+    public static long coinCount(int target, int currentIndex, int[] coins, long[][] numWays){
+        // Base case — if index is out of bounds
+        if (currentIndex >= coins.length){
+            return 0;
         }
         // Base case — If sum is negative, it's not a valid solution
         if (target < 0){
@@ -34,17 +34,15 @@ public class MakingChange {
         }
         // Base case — if smallest possible sum is reached
         if (target == 0){
-            numWays[target][currentIndex] = 1;
             return 1;
         }
-        // Base case — if index is out of bounds
-        if (currentIndex >= coins.length){
-            return 0;
+        // Memoization Base case — if this call is saved in numWays, return that value without recursing
+        if (numWays[target][currentIndex] != 0){
+            return numWays[target][currentIndex];
         }
-
         // Recurse
-        return coinCount(target - coins[currentIndex], currentIndex, coins, numWays) +
+        numWays[target][currentIndex] = coinCount(target - coins[currentIndex], currentIndex, coins, numWays) +
                 coinCount(target, currentIndex + 1, coins, numWays);
-
+        return numWays[target][currentIndex];
     }
 }
