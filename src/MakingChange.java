@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * The class Making Change solves a classic problem:
  * given a set of coins, how many ways can you make change for a target amount?
@@ -14,8 +12,6 @@ public class MakingChange {
      *  for any given total with any given set of coins.
      */
     public static long countWays(int target, int[] coins) {
-        // Sort coins arrays
-        Arrays.sort(coins);
         // 2d array to save recursive calls & reduce redundancy
         // Memoization approach!
         long[][] numWays = new long[target + 1][coins.length];
@@ -41,6 +37,7 @@ public class MakingChange {
             return numWays[target][currentIndex];
         }
         // Recurse
+        // 1st coinCount call = include, 2nd coinCount call = exclude
         numWays[target][currentIndex] = coinCount(target - coins[currentIndex], currentIndex, coins, numWays) +
                 coinCount(target, currentIndex + 1, coins, numWays);
         return numWays[target][currentIndex];
