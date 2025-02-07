@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf08351e-8001-407c-880c-49b47a0a4156" name="Changes" comment="2/3 — updated worklog">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WORK_LOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/WORK_LOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MakingChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MakingChange.java" afterDir="false" />
-    </list>
+    <list default="true" id="bf08351e-8001-407c-880c-49b47a0a4156" name="Changes" comment="2/6 — final submission" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738593700093</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2/6 — final submission">
+      <option name="closed" value="true" />
+      <created>1738907220607</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1738907220607</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -204,6 +208,7 @@
     <MESSAGE value="2/3 — drafting memoization" />
     <MESSAGE value="2/3 — memoization approach done" />
     <MESSAGE value="2/3 — updated worklog" />
-    <option name="LAST_COMMIT_MESSAGE" value="2/3 — updated worklog" />
+    <MESSAGE value="2/6 — final submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="2/6 — final submission" />
   </component>
 </project>
